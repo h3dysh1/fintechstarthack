@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lessons</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Lessons</h1>
+    <ul>
+        {% for lesson in lessons %}
+        <li>
+            <h2>{{ lesson.title }}</h2>
+            <p>{{ lesson.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
