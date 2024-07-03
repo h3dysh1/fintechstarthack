@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 
+from flask import request
+
 app = Flask(__name__)
 
 # Sample data for lessons and quizzes
@@ -26,6 +28,30 @@ def lessons():
 @app.route('/quizzes')
 def quizzes():
     return render_template('quizzes.html', quizzes=quizzes_data)
+
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html')
+
+@app.route('/submit-quiz', methods=['POST'])
+def submit_quiz():
+    answer1 = request.form.get('question1')
+    answer2 = request.form.get('question2')
+    
+    # Define correct answers
+    correct_answers = {
+        'question1': 'A loan for purchasing a house',
+        'question2': 'Higher Education Contribution Scheme'
+    }
+
+    # Initialize score
+    score = 0
+    if answer1.strip().lower() == correct_answers['question1'].strip().lower():
+        score += 1
+    if answer2.strip().lower() == correct_answers['question2'].strip().lower():
+        score += 1
+
+    return render_template('quiz_result.html', score=score)
 
 if __name__ == '__main__':
     app.run(debug=True)
