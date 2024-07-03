@@ -44,7 +44,7 @@ def submit_quiz():
         'question2': 'Higher Education Contribution Scheme'
     }
 
-    # Initialize score
+    # Initialise score
     score = 0
     if answer1.strip().lower() == correct_answers['question1'].strip().lower():
         score += 1
