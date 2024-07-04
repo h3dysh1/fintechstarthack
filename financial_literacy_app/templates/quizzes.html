@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizzes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Quizzes</h1>
+    <ul>
+        {% for quiz in quizzes %}
+        <li>
+            <h2>{{ quiz.title }}</h2>
+            <ul>
+                {% for question in quiz.questions %}
+                <li>
+                    <p>{{ question.question }}</p>
+                    <ul>
+                        {% for option in question.options %}
+                        <li>{{ option }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/home-loans">Home Loans</a></li>
+            <li><a href="/hecs">HECS</a></li>
+            <li><a href="/quiz">Quiz</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
