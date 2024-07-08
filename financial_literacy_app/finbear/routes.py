@@ -39,6 +39,8 @@ def home():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     if form.validate_on_submit():
         flash(f'Account created for {form.username.data}!', 'success')
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -51,6 +53,8 @@ def register():
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     if form.validate_on_submit():
         user = User.get(email=form.email.data)
         if user and bcrypt.check_password_hash(user.password, form.password.data):
@@ -101,3 +105,13 @@ def submit_quiz():
         QuizScore.create(score=score, user=current_user)
     return render_template('quiz_result.html', score=score)
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
+
+@app.route("/account")
+@login_required
+def account():
+    return render_template('account.html', title='Account')
