@@ -13,6 +13,17 @@ class RegistrationForm(FlaskForm):
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
+    def validate_username(self, username):
+        user = User.get_or_none(username=username.data)
+        if user:
+            raise ValidationError('That username is taken. Please choose a different one.')
+
+    def validate_email(self, email):
+        user = User.get_or_none(email=email.data)
+        if user:
+            raise ValidationError('That email is taken. Please choose a different one.')
+
+
 
 class LoginForm(FlaskForm):
     email = StringField('Email',
