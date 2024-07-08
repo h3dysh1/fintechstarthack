@@ -1,5 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request
-from finbear import app, db
+from finbear import app, db, bcrypt
 from finbear.forms import RegistrationForm, LoginForm
 from finbear.models import User, QuizScore
 from flask_login import login_user, current_user, login_required, logout_user
