@@ -1,16 +1,75 @@
 
 {% extends "layout.html" %}
 {% block content %}
-{% for post in posts%}
-  <article class="media content-section">
-    <div class="media-body">
-      <div class="article-metadata">
-        <a class="mr-2" href="#">{{ post.author }}</a>
-        <small class="text-muted">{{ post.date_posted }}</small>
-      </div>
-      <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-      <p class="article-content">{{ post.content }}</p>
+  <div>
+    <div class="title_linebreak">
+        <h2 style="margin-bottom: 0px">Today's practice</h2>
+        <hr style="width: 50%">
     </div>
-  </article>
-{% endfor %}
+    <div class="cards">
+        <div class="coursecard" id="course1">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course2">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course3">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course4">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course5">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="Coursesforyou">
+    <div class="title_linebreak">
+        <h2 style="margin-bottom: 0px">Courses for you</h2>
+        <hr style="width: 50%">
+    </div>
+
+    <div class="cards">
+        <div class="coursecard" id="course1">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course2">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course3">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course4">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+        <div class="coursecard" id="course5">
+            <img src="https://via.placeholder.com/120x150"></img>
+            <h3 class="content">course title</h3>
+            <p class="content">course description</p>
+        </div>
+    </div>
+  </div>
 {% endblock content %}
