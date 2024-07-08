@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Quizzes</h1>
+    <div>
+        <a href="{{ url_for('home') }}">
+            <button>Home</button>
+        </a>
+        <a href="{{ url_for('lessons') }}">
+            <button>Go to Lessons</button>
+        </a>
+    </div>
     <ul>
         {% for quiz in quizzes %}
         <li>
