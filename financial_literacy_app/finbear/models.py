@@ -3,10 +3,6 @@ from peewee import Model, CharField, DateTimeField, IntegerField, ForeignKeyFiel
 import datetime
 from flask_login import UserMixin
 
-# from sqlalchemy.orm import Mapped, mapped_column
-# from sqlalchemy import ForeignKey
-
-
 @login_manager.user_loader
 def load_user(user_id):
     return User.get_or_none(id = int(user_id))
