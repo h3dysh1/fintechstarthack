@@ -85,11 +85,13 @@ def quiz():
 def submit_quiz():
     answer1 = request.form.get('question1').strip().lower()
     answer2 = request.form.get('question2').strip().lower()
+    answer3 = request.form.get('question3').strip().lower()
     
     # Define correct answers
     correct_answers = {
         'question1': 'A loan for purchasing a house',
-        'question2': 'Higher Education Contribution Scheme'
+        'question2': 'Contribution',
+        'question3': '$18200'
     }
 
     # Initialise score
@@ -97,6 +99,8 @@ def submit_quiz():
     if answer1 == correct_answers['question1'].strip().lower():
         score += 1
     if answer2 == correct_answers['question2'].strip().lower():
+        score += 1
+    if answer3 == correct_answers['question3'].strip().lower():
         score += 1
     quiz_score = QuizScore.get_or_none(user=current_user)
     if quiz_score:
