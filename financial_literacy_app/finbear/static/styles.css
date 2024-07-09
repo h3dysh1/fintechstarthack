@@ -39,7 +39,7 @@ input[type="submit"] {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #75aa8f;
     color: white;
     border: none;
     border-radius: 4px;
@@ -48,11 +48,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #5B8A72;
 }
 
 a {
-    color: #007BFF;
+    color: #80A8F6;
     text-decoration: none;
     display: block;
     text-align: center;
@@ -64,7 +64,7 @@ a:hover {
 }
 
 nav {
-    background-color: #007BFF;
+    background-color: #80A8F6;
     padding: 10px 0;
 }
 
