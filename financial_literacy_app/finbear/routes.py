@@ -36,6 +36,21 @@ quizzes_data = [
 def home():
     return render_template('home.html')
 
+@app.route('/about')
+@login_required
+def about():
+    return render_template('about.html')
+
+@app.route('/courses')
+@login_required
+def courses():
+    return render_template('courses.html')
+
+@app.route('/goalscalculator')
+@login_required
+def goalscalculator():
+    return render_template('goalscalculator.html')
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
