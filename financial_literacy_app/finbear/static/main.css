@@ -1,11 +1,15 @@
 body {
-    background: #fafafa;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.10) 100%), linear-gradient(180deg, #75ECE4 0%, #ACFF9E 25%, #B9FDFD 50%, #8DFF83 75%, #80A8F6 100%);
     color: #333333;
     margin-top: 5rem;
   }
   
-  h1, h2, h3, h4, h5, h6 {
+  h1{
     color: #444444;
+  }
+
+  h2, h3, h4, h5, h6 {
+    color: #ffffff;
   }
   
   .bg-steel {
@@ -27,7 +31,7 @@ body {
   .content-section {
     background: #ffffff;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
+    border: 3px solid #80A8F6;
     border-radius: 3px;
     margin-bottom: 20px;
   }
@@ -58,7 +62,7 @@ body {
   }
   
   .article-metadata a:hover {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
   }
   
