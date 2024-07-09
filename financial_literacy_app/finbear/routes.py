@@ -135,11 +135,6 @@ def announcements():
 def newsletter():
     return render_template('newsletter.html')
 
-@app.route('/myfinancejourney')
-@login_required
-def myfinancejourney():
-    return render_template('myfinancejourney.html')
-
 @app.route('/leaderboard')
 @login_required
 def leaderboard():
