@@ -124,6 +124,29 @@ def submit_quiz():
         QuizScore.create(score=score, user=current_user)
     return render_template('quiz_result.html', score=score)
 
+
+@app.route('/announcements')
+@login_required
+def announcements():
+    return render_template('announcements.html')
+
+@app.route('/newsletter')
+@login_required
+def newsletter():
+    return render_template('newsletter.html')
+
+@app.route('/myfinancejourney')
+@login_required
+def myfinancejourney():
+    return render_template('myfinancejourney.html')
+
+@app.route('/leaderboard')
+@login_required
+def leaderboard():
+    return render_template('leaderboard.html')
+
+
+
 @app.route("/logout")
 def logout():
     logout_user()
